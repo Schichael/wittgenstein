@@ -1,7 +1,7 @@
 """ Base classes for ruleset classifiers """
 # Author: Ilan Moscovitz <ilan.moscovitz@gmail.com>
 # License: MIT
-
+import copy
 import math
 
 import numpy as np
@@ -125,7 +125,9 @@ class Ruleset:
             covered = self.rules[0].covers(df).copy()
             for rule in self.rules[1:]:
                 covered = covered.append(rule.covers(df))
-            covered = covered.drop_duplicates()
+            # Following line seems to make no sense to me, so commented it out and could be the reason for wrong
+            # predictions.
+            #covered = covered.drop_duplicates()
             return covered
 
     def num_covered(self, df):
