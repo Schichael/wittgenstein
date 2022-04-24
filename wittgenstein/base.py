@@ -5,6 +5,7 @@ import copy
 import math
 
 import numpy as np
+import pandas as pd
 from numpy import var, mean
 
 from wittgenstein.check import (
@@ -124,10 +125,10 @@ class Ruleset:
         else:
             covered = self.rules[0].covers(df).copy()
             for rule in self.rules[1:]:
-                covered = covered.append(rule.covers(df))
-            # Following line seems to make no sense to me, so commented it out and could be the reason for wrong
-            # predictions.
-            # covered = covered.drop_duplicates()
+                rule_df = rule.covers(df)
+                # Drop indices from rule_df that are already in covered
+                rule_df = rule_df.drop(covered.index)
+                covered = pd.concat([covered, rule_df])
             return covered
 
     def num_covered(self, df):
