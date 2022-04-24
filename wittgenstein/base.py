@@ -127,7 +127,7 @@ class Ruleset:
                 covered = covered.append(rule.covers(df))
             # Following line seems to make no sense to me, so commented it out and could be the reason for wrong
             # predictions.
-            #covered = covered.drop_duplicates()
+            # covered = covered.drop_duplicates()
             return covered
 
     def num_covered(self, df):

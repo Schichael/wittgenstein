@@ -243,6 +243,8 @@ Contributions are welcome! If you are interested in contributing, let me know at
 - [_Philosophical Investigations_](https://static1.squarespace.com/static/54889e73e4b0a2c1f9891289/t/564b61a4e4b04eca59c4d232/1447780772744/Ludwig.Wittgenstein.-.Philosophical.Investigations.pdf)
 
 ## Changelog
+#### v0.3.3: 4/24/2022
+- fix prediction bug for duplicate data
 
 #### v0.3.2: 8/8/2021
 - Speedup for binning continuous features (~several orders of magnitude)
