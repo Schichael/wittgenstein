@@ -127,7 +127,7 @@ class Ruleset:
             for rule in self.rules[1:]:
                 rule_df = rule.covers(df)
                 # Drop indices from rule_df that are already in covered
-                rule_df = rule_df.drop(covered.index)
+                rule_df = rule_df.drop(set.intersection(set(covered.index), set(rule_df.index)))
                 covered = pd.concat([covered, rule_df])
             return covered
 
