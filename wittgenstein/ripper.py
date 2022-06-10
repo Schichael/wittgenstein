@@ -262,6 +262,7 @@ class RIPPER(AbstractRulesetClassifier):
                     neg_idx,
                     prune_size=self.prune_size,
                     random_state=iter_random_state,
+                    max_rule_conds=self.max_rule_conds
                 )
             else:
                 newset = self._optimize_ruleset(
