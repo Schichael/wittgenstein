@@ -1,4 +1,8 @@
+# Fixes to the original wittgenstein implementation
+
+
 # wittgenstein
+
 
 _And is there not also the case where we play and--make up the rules as we go along?  
   -Ludwig Wittgenstein_
