@@ -271,6 +271,7 @@ class RIPPER(AbstractRulesetClassifier):
                     neg_df,
                     prune_size=self.prune_size,
                     random_state=iter_random_state,
+                    max_rule_conds=self.max_rule_conds
                 )
 
             if self.verbosity >= 1:
